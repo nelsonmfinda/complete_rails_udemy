@@ -67,3 +67,4 @@ build-iPhoneSimulator/
 !/log/.keep
 /tmp
 .idea/
+coverage
