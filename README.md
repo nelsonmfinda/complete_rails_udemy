@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.com/notebook/website.svg?branch=master)](https://travis-ci.com/nelsonmfinda/notebook)
+[![Build Status](https://travis-ci.com/nelsonmfinda/notebook.svg?branch=master)](https://travis-ci.com/nelsonmfinda/notebook)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a287df685c8499df632e/maintainability)](https://codeclimate.com/github/nelsonmfinda/notebook/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a287df685c8499df632e/test_coverage)](https://codeclimate.com/github/nelsonmfinda/notebook/test_coverage)
 
