@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Use SimpleCov for code coverage analysis tool for Ruby
+gem 'simplecov', require: false, group: :test
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use bootstrap-sass a Sass-powered version of Bootstrap 3
