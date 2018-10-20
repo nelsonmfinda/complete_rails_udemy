@@ -1,0 +1,35 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Phones', phones_path, :class => "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Kinds', kinds_path %></li>
+        <li><%= link_to 'Contacts', contacts_path %></li>
+        <li class="active"><%= link_to 'Phones', phones_path %></li>
+        <li><%= link_to 'Addresses', addresses_path %></li>
+      </ul>
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-header" style="margin-top: 80px;">Show Phone</h1>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Phone:</strong>
+	  <%= @phone.phone %>
+	</p>
+
+	<p>
+	  <strong>Contact:</strong>
+	  <%= @phone.contact %>
+	</p>
+
+	<%= link_to 'Edit', edit_phone_path(@phone), :class => 'btn btn-default' %> |
+	<%= link_to 'Back', phones_path, :class => 'btn btn-primary' %>
+
+</div>

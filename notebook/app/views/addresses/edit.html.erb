@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Addresses', addresses_path, :class => "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Kinds', kinds_path %></li>
+        <li><%= link_to 'Contacts', contacts_path %></li>
+        <li><%= link_to 'Phones', phones_path %></li>
+        <li class="active"><%= link_to 'Addresses', addresses_path %></li>
+      </ul>
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="page-header" style="margin-top: 80px;">Editing Address</h1>
+  <div class="col-md-8 col-md-offset-2">
+
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @address, :class => 'btn btn-default' %> |
+	<%= link_to 'Back', addresses_path, :class => 'btn btn-primary' %>
+
+	</div>
+</div>
