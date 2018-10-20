@@ -1,7 +1,8 @@
 
 [![Build Status](https://travis-ci.com/nelsonmfinda/notebook.svg?branch=master)](https://travis-ci.com/nelsonmfinda/notebook)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5bcb7559808c7161ee0000b2/maintainability)](https://codeclimate.com/github/nelsonmfinda/notebook/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5bcb7559808c7161ee0000b2/test_coverage)](https://codeclimate.com/github/nelsonmfinda/notebook/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a631e287b92a1c66e213/maintainability)](https://codeclimate.com/github/nelsonmfinda/notebook/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a631e287b92a1c66e213/test_coverage)](https://codeclimate.com/github/nelsonmfinda/notebook/test_coverage)
+[![Inline docs](http://inch-ci.org/github/nelsonmfinda/notebook.png)](http://inch-ci.org/github/nelsonmfinda/notebook)
 
 # Notebook
 
