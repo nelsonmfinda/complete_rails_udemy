@@ -7,6 +7,10 @@ gem 'rails', '4.2.8'
 gem 'sqlite3'
 # Use SimpleCov for code coverage analysis tool for Ruby
 gem 'simplecov', require: false, group: :test
+# Use Automatic Ruby code style checking tool
+gem 'rubocop', '~> 0.59.2'
+# Use analysis for your projects, RSpec-specific an extension to RuboCop
+gem 'rubocop-rspec'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use bootstrap-sass a Sass-powered version of Bootstrap 3

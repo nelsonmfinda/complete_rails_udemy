@@ -1,96 +1,101 @@
+inherit_from:
+  - .rubocop_todo.yml
+  - .rubocop.yml
+
+# This is the configuration used to check the rubocop source code.
+
+
+require:
+- rubocop/cop/internal_affairs
+- rubocop-rspec
+
 AllCops:
   Exclude:
-  - 'spec/fixtures/iso-8859.rb'
+  - 'vendor/**/*'
+  - 'spec/fixtures/**/*'
   - 'tmp/**/*'
-  - 'vendor/bundle/**/*'
-  - 'vendor/bundle/**/.*'
-  TargetRubyVersion: 1.9
+  TargetRubyVersion: 2.2
 
-Bundler/OrderedGems:
-  Enabled: false
+Naming/PredicateName:
+  # Method define macros for dynamically generated method.
+  MethodDefinitionMacros:
+  - define_method
+  - define_singleton_method
+  - def_node_matcher
+  - def_node_search
 
-Lint/AmbiguousRegexpLiteral:
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Style/FormatStringToken:
+  # Because we parse a lot of source codes from strings. Percent arrays
+  # look like unannotated format string tokens to this cop.
   Exclude:
-  - 'features/**/*_steps.rb'
-  - 'spec/**/*_steps.rb'
-  - 'tmp/**/*_steps.rb'
+  - spec/**/*
 
-Metrics/AbcSize:
-  Max: 25 # TODO: Lower to 15
+Style/IpAddresses:
+  # The test for this cop includes strings that would cause offenses
+  Exclude:
+  - spec/rubocop/cop/style/ip_addresses_spec.rb
 
-Metrics/BlockLength:
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Layout/ClassStructure:
+  Enabled: true
+  Categories:
+    module_inclusion:
+    - include
+    - prepend
+    - extend
+  ExpectedOrder:
+  - module_inclusion
+  - constants
+  - public_class_methods
+  - initializer
+  - instance_methods
+  - protected_methods
+  - private_methods
+
+Layout/IndentHeredoc:
+  EnforcedStyle: powerpack
+
+# Trailing white space is meaningful in code examples
+Layout/TrailingWhitespace:
+  AllowInHeredoc: true
+
+Lint/AmbiguousBlockAssociation:
   Exclude:
   - 'spec/**/*.rb'
 
-Metrics/BlockNesting:
-  Max: 2
+Lint/InterpolationCheck:
+  Exclude:
+  - 'spec/**/*.rb'
 
-Metrics/LineLength:
-  AllowURI: true
+Lint/UselessAccessModifier:
+  MethodCreatingMethods:
+  - 'def_matcher'
+  - 'def_node_matcher'
+
+Lint/BooleanSymbol:
   Enabled: false
 
-Metrics/MethodLength:
-  CountComments: false
-  Max: 12 # TODO: Lower to 10
+Metrics/BlockLength:
+  Exclude:
+  - 'Rakefile'
+  - '**/*.rake'
+  - 'spec/**/*.rb'
 
 Metrics/ModuleLength:
   Exclude:
-  - 'lib/simplecov.rb'
+  - 'spec/**/*.rb'
 
-Metrics/ParameterLists:
-  Max: 4
-  CountKeywordArgs: true
-
-Layout/AccessModifierIndentation:
-  EnforcedStyle: outdent
-
-Style/CollectionMethods:
-  PreferredMethods:
-    map:      'collect'
-    reduce:   'inject'
-    find:     'detect'
-    find_all: 'select'
-
-Style/Documentation:
-  Enabled: false
-
-Style/DoubleNegation:
-  Enabled: false
-
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
-
-Layout/IndentHeredoc:
-  Enabled: false
-
-Style/RegexpLiteral:
-  Enabled: false
-
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-
-Style/SpecialGlobalVars:
+Performance/Caller:
   Exclude:
-  - 'spec/deleted_source_spec.rb'
-  - 'spec/return_codes_spec.rb'
-  - 'lib/simplecov/defaults.rb'
+  - spec/rubocop/cop/performance/caller_spec.rb
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+RSpec/PredicateMatcher:
+  EnforcedStyle: explicit
 
-Style/FileName:
-  Exclude:
-  - 'spec/fixtures/utf-8.rb'
-
-Style/TrailingCommaInLiteral:
-  EnforcedStyleForMultiline: comma
-
-Style/GuardClause:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: true
-  EnforcedStyle: always
-  Exclude:
-  - 'spec/fixtures/**/*'
-  - 'spec/faked_project/**/*'
+RSpec/NestedGroups:
+  Max: 7
